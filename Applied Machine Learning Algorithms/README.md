@@ -1,5 +1,5 @@
 ## Instructor
-Derek Jedamski \n
+Derek Jedamski /n
 LinkedIn Profile: https://www.linkedin.com/in/derek-jedamski-8a887045/
 
 ## Course Description
