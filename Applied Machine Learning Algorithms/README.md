@@ -14,3 +14,7 @@ In the first installment of the Applied Machine Learning series, instructor Dere
 - Using the random forest algorithm
 - Fitting a basic boosting model
 
+## Skills Covered
+- Machine Learning
+- Algorithms
+
