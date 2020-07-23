@@ -1,0 +1,123 @@
+---> Getting help
+get-Help
+get-Help Get-Service
+get-Help Get-Service -examples
+get-Help Get-Service -detailed
+get-Help Get-Service -online
+
+
+---> Discovering cmdlets and aliases
+get-Command
+get-help set-vm
+Aliases is where you bridge the gap between where you are comming from and where you wanna go
+These are aliases for the command get-childitem
+dir
+ls
+gci
+get-help Get-Childitem -full
+get-help about_Aliases
+
+
+
+---> Get-Service and Get-Member
+Can run these commands on your own service and other remote services
+Get-Service
+Clear screen command -> cls
+Pipe -> |
+Red arrow on the left -> you are not done yet, have to complete command
+Find out all the services that are currently stopped at power shell
+Get-Service | Where-Object {$_.status - eq "stopped"}
+Show all additional properties about the particular object, important as a coder
+Get-Service | Get-Member
+
+
+
+---> Functions
+
+Get-Command
+More has to be done when you see >>> on the left
+Make a function to add up a number
+function add 
+{
+$add = [int](2+2)
+write-output "$add"
+}
+
+
+
+---> Relieving anxiety with -Whatif and -Confirm
+This will stop every service as an administrator, but we can use Whatif to understand what it does as risk mitigation
+Get-Service | Stop-Service -Whatif
+When we work with the pipe symbol it will run every single service and you will have to confirm them individually
+Get-Service | Stop-Service -Confirm
+When taking from test to production, these two parameters above can help mitigate risk
+
+
+
+---> ISE and you
+Integrating Scripting Environment
+ISE
+Get-Service -Name Audiosrv
+Commands Add-on (right side-bar) helps you learn the language
+The following below establishes a new remote connection, can connect via the ISE quickly
+File -> New Remote PowerShell Tab... 
+
+
+
+
+---> Finding and installing modules
+Get-Module -ListAvailable
+Below is an example to show the commands available for the module applocker
+Import-Module -name applocker
+get-command -module applocker
+Can do a lot of reverse engineering by looking at the powershell gallery that I can leverage
+https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=PowerShell&f%5B0%5D.Text=PowerShell
+
+When working with scripts and download scripts powershell doesn't trust them by default. Look at excecution policy:
+Get-ExecutionPolicy
+RemoteSigned (this is the default policy)
+Restricted (nothing runs on the system, local and downloaded)
+AllSigned (all localy created)
+Restricted (great for testing but not good for production environment)
+
+
+
+ 
+ ---> Office 365 PowerShell
+ Connect to Office 365 with PowerShell
+ Two ways:
+ 	Azure Active Directory PowerShell for Graph module
+ 		Install-Module -Name AzureAD
+ 	Microsoft Azure Active Directory Module for Windows PowerShell
+ 		Install the 64-bit version of the Microsoft Online Services Sign-in Assistant
+ 		Install-module MSOnline
+
+
+
+
+ ---> Azure PowerShell
+ install-module az -allowclobber -scope currentuser
+ get-module
+ get-command -module "az.*"
+ get-command -module "az.websites"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
